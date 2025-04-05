@@ -3,3 +3,4 @@ notebook
 sqlalchemy
 psycopg2-binary
 pandas
+pycoingecko
