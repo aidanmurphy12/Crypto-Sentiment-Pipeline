@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5433:5432"
+    networks:
+      - app-net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./notebooks:/notebooks  # Mount notebooks as a live volume
+      - ./app:/app   
