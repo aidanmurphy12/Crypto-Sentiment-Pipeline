@@ -6,7 +6,7 @@ from db_utils import get_engine
 from models import crypto_prices
 from datetime import datetime
 
-def fetch_and_store_prices(limit=10):
+def fetch_and_store_prices(limit=50):
     cg = CoinGeckoAPI()
     engine = get_engine()
 

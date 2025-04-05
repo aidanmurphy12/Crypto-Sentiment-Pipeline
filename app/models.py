@@ -16,13 +16,3 @@ crypto_prices = Table(
 
 sentiment_data = Table(
     "sentiment_data", metadata,
-    Column("id", Integer, primary_key=True),
-    Column("source", String),
-    Column("coin", String),
-    Column("text", String),
-    Column("sentiment_score", Float),
-    Column("timestamp", DateTime, default=datetime.utcnow)
-)
-
-def create_tables(engine):
-    metadata.create_all(engine)
