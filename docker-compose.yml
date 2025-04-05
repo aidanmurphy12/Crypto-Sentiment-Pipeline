@@ -18,4 +18,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./notebooks:/notebooks  # Mount notebooks as a live volume
-      - ./app:/app   
+      - ./app:/app              # (Optional) mount code too
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+    networks:
+      - app-net
+
+networks:
+  app-net:
