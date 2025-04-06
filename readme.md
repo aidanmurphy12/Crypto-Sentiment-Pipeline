@@ -1,4 +1,4 @@
-# 🧠 Crypto Sentiment Pipeline
+# Crypto Sentiment Pipeline
 
 A Dockerized data pipeline that collects and analyzes cryptocurrency prices alongside social sentiment data (e.g. Twitter, Reddit). Built with Python, PostgreSQL, SQLAlchemy, and Jupyter Notebooks — all running inside Docker.
 
