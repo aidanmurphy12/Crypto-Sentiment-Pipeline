@@ -35,3 +35,5 @@ venv/
 
 # Mac system files
 .DS_Store
+
+echo ".env" >> .gitignore
