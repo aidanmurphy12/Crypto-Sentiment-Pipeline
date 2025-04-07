@@ -38,10 +38,12 @@ def fetch_price_history(coin_id, coin_symbol, days=3):
         timestamp = datetime.utcfromtimestamp(point[0] / 1000.0)
         price_usd = point[1]
         rows.append({
-            "timestamp": timestamp,
-            "coin": coin_symbol,
-            "price_usd": price_usd
+            "symbol": coin_symbol,
+            "name": coin_id,
+            "price_usd": price_usd,
+            "timestamp": timestamp
         })
+
 
     return rows
 
