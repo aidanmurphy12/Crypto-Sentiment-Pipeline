@@ -1,4 +1,6 @@
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float, DateTime, text
+# models.py
+
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float, DateTime
 from datetime import datetime
 from db_utils import get_engine
 
@@ -22,6 +24,14 @@ sentiment_data = Table(
     Column("text", String),
     Column("sentiment_score", Float),
     Column("timestamp", DateTime, default=datetime.utcnow)
+)
+
+top_coins = Table(
+    "top_coins", metadata,
+    Column("id", String, primary_key=True),           # CoinGecko's coin ID (e.g., "bitcoin")
+    Column("symbol", String),                         # Ticker symbol (e.g., "BTC")
+    Column("name", String),                           # Full name (e.g., "Bitcoin")
+    Column("market_cap_rank", Integer)                # CoinGecko market cap rank
 )
 
 def create_tables(engine):
