@@ -17,9 +17,9 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./notebooks:/notebooks    # Mount local notebooks into container
-      - ./app:/app                # Mount app code to sync Python scripts
-    working_dir: /notebooks       # Start Jupyter in the right folder
+      - ./notebooks:/notebooks
+      - ./app:/app
+    working_dir: /notebooks
     ports:
       - "8888:8888"
     depends_on:
